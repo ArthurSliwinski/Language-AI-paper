@@ -33,6 +33,7 @@ training_accuracy = model.score(train_X, train_Y)
 
 # Next the top n features and corresponding features are extracted from the model
 coef = model.coef_[0]
+coef = np.abs(coef)
 top_ind = np.argpartition(coef, -150)[-150:]
 top_coef = coef[top_ind]
 
